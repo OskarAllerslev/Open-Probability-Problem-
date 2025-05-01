@@ -1,4 +1,5 @@
 
+% Updated version incorporating the two small corrections
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm,enumitem}
 \usepackage[a4paper,margin=3cm]{geometry}
@@ -9,12 +10,12 @@
 \begin{document}
 
 \begin{theorem}[Negative answer to Thorisson Problem~3.1]
-Let $Z=(Z_k)_{k\in\mathbb Z}$ be an \emph{arbitrary} stationary $\{0,1\}$-valued process.
+Let $Z=(Z_k)_{k\in\mathbb Z}$ be an \emph{arbitrary} stationary $\{0,1\}$‑valued process.
 Let $(p_k)_{k\ge0}\subset(0,1)$ satisfy
 \begin{subequations}\label{eq:pconds}
 \begin{align}
-p_k &\xrightarrow{k\to\infty} 0, \label{eq:p1}\\
-c  &:= \liminf_{n\to\infty}\sum_{k=n}^{2n}p_k \;>\;0. \label{eq:p2}
+  p_k &\xrightarrow{k\to\infty} 0, \label{eq:p1}\\
+  c  &:= \liminf_{n\to\infty}\sum_{k=n}^{2n}p_k \;>\;0. \label{eq:p2}
 \end{align}
 \end{subequations}
 Let $(J_k)_{k\in\mathbb Z}$ be independent $\mathrm{Bernoulli}(p_k)$ variables, independent of $Z$, and set
@@ -22,8 +23,7 @@ Let $(J_k)_{k\in\mathbb Z}$ be independent $\mathrm{Bernoulli}(p_k)$ variables, 
   X_k := Z_k \oplus J_k,\qquad
   Y_k := Z_k,\qquad k\in\mathbb Z,
 \]
-where $\oplus$ denotes addition modulo~$2$.\footnote{%
-$\oplus$ is the XOR–operator on $\{0,1\}$.}
+where $\oplus$ denotes addition modulo~$2$ (the XOR–operator on $\{0,1\}$).
 Denote by $\theta_n$ the time–shift: $(\theta_n\bm x)_t := x_{t+n}$.
 Then
 \begin{enumerate}[label=\textup{(\alph*)}]
@@ -46,7 +46,7 @@ Hence setwise convergence of the shifted laws does not imply convergence in tota
 
 \begin{proof}
 \textit{Step 1 (stationarity).}
-Since $((Z_k,J_k))_{k\in\mathbb Z}$ is i.i.d.\ in $k$, its distribution is shift-invariant; thus so is the joint law of $(X,Y)$.
+Since $(Z_k)_{k\in\mathbb Z}$ is stationary by assumption and independent of $(J_k)_{k\in\mathbb Z}$, the joint distribution of $(X,Y)$ is shift‑invariant (stationary).
 
 \smallskip
 \textit{Step 2 (setwise convergence).}
@@ -61,7 +61,7 @@ By~\eqref{eq:p1} this sum tends to~$0$.
 Let $\mathcal C$ be the $\pi$–system of cylinder sets and
 $\mathcal D=\{A: P(\theta_n X\in A)\to P(Y\in A)\}$.
 Then $\mathcal C\subset\mathcal D$ and $\mathcal D$ is a Dynkin system;
-the $\pi$–$\lambda$ lemma yields $\sigma(\mathcal C)=\mathcal E^\infty\subset\mathcal D$,
+ the $\pi$–$\lambda$ lemma yields $\sigma(\mathcal C)=\mathcal E^\infty\subset\mathcal D$,
 proving (a).
 
 \smallskip
@@ -69,7 +69,7 @@ proving (a).
 Define the cylinder
 \[
   B_n := \bigl\{\bm x\in\{0,1\}^{\mathbb Z}\;:\;
-           \exists k\in[0,n]\text{ with }x_k\neq y_k \bigr\}.
+           \exists k\in[0,n]\text{ with }x_k\neq Z_k \bigr\}.
 \]
 We have $P(Y\in B_n)=0$.  For $\theta_n X$,
 \[
