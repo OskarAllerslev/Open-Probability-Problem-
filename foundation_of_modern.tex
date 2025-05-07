@@ -1,0 +1,137 @@
+
+% Updated version incorporating the two small corrections
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm,enumitem}
+\usepackage[a4paper,margin=3cm]{geometry}
+\usepackage{bm}
+
+\usepackage[utf8]{inputenc}   % allow UTF-8 in the file
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{enumitem}         % for (i), (ii) labels
+\usepackage{geometry}         % nicer margins (optional)
+\newtheorem{theorem}{Theorem}
+
+\begin{document}
+
+
+\title{Selected problems from Foundations of Modern Probability}
+Here i am to show some solutions to selected problems from the book by Kallenberg.
+
+\section{Sets and functions, measures and integration}
+\subsection*{Problem 3}
+For any space $S$ let $\mu A$ denote the cardinality of a set $A \subset S$. Show that $\mu$ is a measure in $(S, 2^S)$.
+\begin{proof}
+We apply the definition of a measure.
+\textbf{1. Null empty set:}  
+We have
+\[
+\mu(\emptyset) = \#\emptyset = 0.
+\]
+\textbf{2. Countable additivity:}  
+Let \( (A_k)_{k \geq 1} \subset 2^S \) be a countable sequence of pairwise disjoint subsets of \( S \). Then their union is:
+\[
+\mu\left( \bigcup_{k \geq 1} A_k \right) = \#\left( \bigcup_{k \geq 1} A_k \right).
+\]
+Since the sets \( A_k \) are disjoint, each element in the union belongs to exactly one \( A_k \), so the cardinality of the union is the sum of the cardinalities:
+\[
+\#\left( \bigcup_{k \geq 1} A_k \right) = \sum_{k=1}^\infty \#A_k = \sum_{k=1}^\infty \mu(A_k).
+\]
+
+Hence, \( \mu \) is countably additive.  \\
+\end{proof}
+
+
+\subsection*{Problem 10 -- Fubini--Tonelli with counting measure}
+
+Let $(S,\mathcal{S},\mu)$ be a $\sigma$--finite measure space and let
+\[
+\bigl(\mathbb{N},\,2^{\mathbb{N}},\,\nu\bigr), \qquad \nu(A)=\#A,
+\]
+be the counting--measure space on the natural numbers.
+Write $\mu\otimes\nu$ for the product measure on
+$\bigl(S\times\mathbb{N},\,\mathcal{S}\otimes 2^{\mathbb{N}}\bigr)$.
+
+\medskip
+\textbf{Theorem (Tonelli--Fubini).}\;
+Let \(f:S\times\mathbb{N}\to[-\infty,\infty]\) be
+\(\mathcal{S}\otimes 2^{\mathbb{N}}\)-measurable.
+
+\begin{enumerate}[label=(\roman*)]
+\item (\emph{Tonelli}) If \(f\ge 0\), then
+\begin{equation}\label{eq:tonelli}
+   \int_{S\times\mathbb{N}} f(s,t)\,(\mu\otimes\nu)(ds,dt)
+   \;=\;
+   \int_S \Bigl(\sum_{t\in\mathbb{N}} f(s,t)\Bigr)\,\mu(ds)
+   \;=\;
+   \sum_{t\in\mathbb{N}} \int_S f(s,t)\,\mu(ds),
+\end{equation}
+allowing the value \(+\infty\).
+
+\item (\emph{Fubini}) If \(f\in L^{1}(\mu\otimes\nu)\),  
+all three integrals in \eqref{eq:tonelli} are finite and equal, and both
+iterated integrals exist as absolutely convergent expressions.
+\end{enumerate}
+
+\begin{proof}
+\break
+\textbf{Step 1. Indicator rectangles.}\;
+Let \(A=B\times C\) with \(B\in\mathcal{S}\) and \(C\subseteq\mathbb{N}\).
+For the indicator \(\mathbf{1}_{A}(s,t)=\mathbf{1}_{B}(s)\,\mathbf{1}_{C}(t)\) we have
+\[
+\int_{S\times\mathbb{N}} \mathbf{1}_{A}\,d(\mu\otimes\nu)
+   =(\mu\otimes\nu)(A)=\mu(B)\,\nu(C).
+\]
+On the other hand,
+\[
+\int_S \sum_{t\in\mathbb{N}}\mathbf{1}_{A}(s,t)\,\mu(ds)
+   =\int_S \mathbf{1}_{B}(s)\Bigl(\sum_{t\in C}1\Bigr)\mu(ds)
+   =\mu(B)\,\#C
+   =\mu(B)\,\nu(C),
+\]
+and the same equality holds if the order of integration and summation is
+reversed.  Hence \eqref{eq:tonelli} holds for \(\mathbf{1}_{A}\).
+
+\smallskip
+\textbf{Step 2. Simple functions.}\;
+Any non‑negative simple function can be written
+\(f=\sum_{k=1}^{m}c_k\,\mathbf{1}_{A_k}\) with \(c_k\ge 0\) and \(A_k\) rectangles
+as above.  By linearity of the integral and Step 1, \eqref{eq:tonelli}
+holds for every such \(f\).
+
+\smallskip
+\textbf{Step 3. Non‑negative measurable functions.}\;
+For a general \(f\ge 0\) choose an increasing sequence of simple
+functions \((f_n)_{n\ge 1}\) with \(f_n\uparrow f\).
+Applying the Monotone Convergence Theorem on both sides of
+\eqref{eq:tonelli} and using Step 2 yields the Tonelli identity for \(f\).
+
+\smallskip
+\textbf{Step 4. Integrable functions.}\;
+If \(f\in L^{1}(\mu\otimes\nu)\), decompose \(f=f^{+}-f^{-}\) with
+\(f^{\pm}\ge 0\) and \(f^{\pm}\in L^{1}\).
+Apply Step 3 to \(f^{+}\) and \(f^{-}\) separately and subtract;
+finiteness follows from integrability.  Thus \eqref{eq:tonelli} holds
+and all integrals are finite.
+
+\smallskip
+Steps 1--4 establish Tonelli’s theorem for \(f\ge 0\) and Fubini’s
+theorem for \(f\in L^{1}(\mu\otimes\nu)\).
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
