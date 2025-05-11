@@ -1,5 +1,5 @@
 
-% Updated version incorporating the two small corrections
+ Updated version incorporating the two small corrections
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm,enumitem}
 \usepackage[a4paper,margin=3cm]{geometry}
@@ -118,20 +118,209 @@ Steps 1--4 establish Tonelli’s theorem for \(f\ge 0\) and Fubini’s
 theorem for \(f\in L^{1}(\mu\otimes\nu)\).
 \end{proof}
 
+\section*{Processes, Distributions and independence}
 
+\textbf{Problem 4.} \newline
+Let $X,Y \in \{0,1\}$ on an index set $T$. \newline 
+Show::
+\begin{align}
+	X \overset{d}{=} Y \iff P\left(\sum_i x_{t_i} > 0 \right) = P\left(\sum_i y_{t_i} > 0 \right)
+\end{align}
+\begin{proof}
+Let $S=\{0,1\}$ and equip $S^{T}$ with the product $\sigma$–algebra
+$\mathcal B$.
 
+\medskip
+\noindent\textbf{($\Rightarrow$)}\;
+If $X\stackrel d=Y$, then for every $A\in\mathcal B$ we have
+$\mathbb P(X\in A)=\mathbb P(Y\in A)$.  
+Taking
+\(
+A=\bigl\{f\in S^{T}:\sum_{i=1}^{n}f_{t_{i}}>0\bigr\}
+\)
+gives
+\[
+\mathbb P\!\Bigl(\sum_{i=1}^{n}X_{t_{i}}>0\Bigr)=
+\mathbb P\!\Bigl(\sum_{i=1}^{n}Y_{t_{i}}>0\Bigr)
+\qquad(\forall n,\;t_{1},\dots ,t_{n}\in T).
+\]
 
+\medskip
+\noindent\textbf{($\Leftarrow$)}\;
+Assume these equalities hold for every finite set of indices.  
+Define the class
+\[
+\mathcal D:=\bigl\{A\in\mathcal B:
+      \mathbb P(X\in A)=\mathbb P(Y\in A)\bigr\}.
+\]
 
+\emph{Claim: \(\mathcal D\) is a dynkin–system.}
+Indeed,
+(i) $S^{T}\in\mathcal D$;
+(ii) if $A\in\mathcal D$ then
+$S^{T}\!\setminus\!A\in\mathcal D$ by complementing the equal
+probabilities;  
+(iii) if $(A_k)_{k\ge1}\subset\mathcal D$ are disjoint, then
+countable additivity gives
+\(\mathbb P(X\in\bigcup_kA_k)=\mathbb P(Y\in\bigcup_kA_k)\).
+Hence \(\mathcal D\) is a Dynkin-system.
 
+Next, for every finite non–empty
+\(J=\{t_{1},\dots ,t_{m}\}\subset T\) set
+\[
+Z_{J}:=\bigl\{f\in S^{T}:f_{t_{i}}=0\ \forall i\in J\bigr\}.
+\]
+Because $Z_{J}$ is the complement of the event
+\(\{\sum_{i=1}^{m}f_{t_{i}}>0\}\),
+our hypothesis puts \(Z_{J}\) in \(\mathcal D\).
+Let
+\(
+\mathcal C:=\{Z_{J}:0<|J|<\infty\}.
+\)
 
+\emph{Claim: \(\mathcal C\) is a pi–system.}
+For finite $J,K\subset T$,
+\(Z_{J}\cap Z_{K}=Z_{J\cup K}\), so finite intersections stay inside
+\(\mathcal C\).
 
+Thus we have a pi–system \(\mathcal C\subset\mathcal D\).
+By the π–λ (Dynkin–Sierpiński) theorem,
+\[
+\sigma(\mathcal C)\subset\mathcal D.
+\]
 
+\medskip
+\emph{But \(\sigma(\mathcal C)=\mathcal B\).}
+For any $t\in T$ the single‑coordinate event
+\(\{f_{t}=1\}\) is \(Z_{\{t\}}^{\mathrm c}\in\sigma(\mathcal C)\).
+Finite intersections of such events and their complements therefore
+yield every cylinder set of the form
+\(\{f:(f_{t_{1}},\dots ,f_{t_{n}})\in B\}\),
+and the cylinders generate the product σ‑algebra.  
 
+\medskip
+Consequently \(\mathcal B\subset\mathcal D\); i.e.
+\(\mathbb P(X\in A)=\mathbb P(Y\in A)\) for all
+\(A\in\mathcal B\).  That is exactly \(X\stackrel d=Y\).
+\end{proof}
 
+\textbf{Problem 10.}
+\newline
+Let $\xi_i$ i.i.d on $(S, \mathcal{S}, \mu)$ and $\tau = \{ k \geq 1 : \xi_k \in A \}$. Fix $A \in \mathcal{S}$ and set $\mu(A)>0$. 
+\newline 
+Show that the distribution of $\xi_\tau$ is $\mu(\cdot \mid A)$. 
+\newline 
+\begin{proof}
+\newline
+Start by noting that 
+	\begin{align}
+		\{\xi_\tau \in B \} &= \bigcup_{k=1}^\infty \{\tau = k \cap \xi_k \in B\}
+	\end{align}
+Next we note that the sets are disjoint, and so we use the property of a measure. 
+	\begin{align}
+		P(\xi_\tau \in B ) &= \sum_{k=1}^\infty P(\tau = k \cap \xi_k \in B) \\
+		&= \sum_{K=1}^\infty P(\xi_1 \notin A, \cdots, \xi_k \in A \cap B) \\
+		&= \sum_{k=1}^\infty \left( \prod_{i=1}^{k-1} P(\xi_i \notin A) \right) P(\xi_k \in A \cap B)\\
+		&= \sum_{k=1}^\infty (1- \mu(A))^{k-1} \mu(A\cap B) \\
+		&= \mu(A)^{-1}\mu(B \cap A)
+	\end{align}
+	Holds $\forall B \subset \mathcal{S}$.
 
+\end{proof}
+
+\textbf{Problem 11.}
+\newline 
+Let $\xi_i \in [0,1]$ i.i.d. Show that $E\left(\prod_n \xi_n\right) = \prod_n E(\xi_n)$.
+\newline
+\begin{proof}
+\newline
+	let $X_i: ([0,1], \mathcal{B}([0,1]), P) \rightarrow \mathbb{R}$ be $\mathcal{L}^1$.
+	Define $\mu_k = P \circ X_k^{-1}$ and $\mu = \bigotimes_n \mu_n$, be independent.
+	\begin{align}
+		E\left( \prod_{k=1}^n X_k\right) &= \int_\Omega \prod_{k=1}^n X_k(\omega)dP(\omega) \\
+		&\overset{Indp.}{=} \int_{[0,1]^n} \prod_{k=1}^n x_k d(\mu_1 \otimes \cdots \otimes \mu_n) \\
+		&\overset{FB}{=} \int_{[0,1]} x_n d\mu_n \int_{[0,1]^{n-1}} \prod_{k=1}^{n-1} x_k d(\mu_1 \otimes \cdots \otimes \mu_{n-1}) \\
+		&\overset{iter.}{=} \prod_{k=1}^n \int_{[0,1]} x_k d\mu_k
+	\end{align}
+\newline
+	The proof can be extended to apply for probabilities by setting $X_k(\omega) = 1\{A_k(\omega)\}$.
+\end{proof}
+
+\textbf{Problem 3.}
+\newline
+We are $F$ which is right cont. with bounded variation and is zero at minus infinity. We are asked to show that $E(F(\xi)) = \int P(\xi \geq t) dF(t)$. 
+\begin{proof}
+Define the push forward / law of $\xi$ as $\mu_\xi = P \circ \xi^{-1}$ or rather $\mu_\xi(B) = P(\xi \in B)$.
+
+\begin{align}
+	E[F(\xi)] &= \int_\Omega \biggl(\int_{\mathbb{R}} 1_{\{s\ge t\}} \,dF(t)\biggr)\,d\mu_\xi(s) \\
+	&\overset{\text{FT}}{=} \int_{\mathbb{R}} \biggl(\int_\Omega 1_{\{s\ge t\}} \,d\mu_\xi(s)\biggr)\,dF(t) \\
+	&= \int_{\mathbb{R}} \mu_\xi\bigl([t,\infty)\bigr)\,dF(t) \\
+	&= \int_{\mathbb{R}} P(\xi \ge t)\,dF(t).
+\end{align}
+\end{proof}
 
 
 
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
