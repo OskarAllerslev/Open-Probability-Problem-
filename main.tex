@@ -10,7 +10,7 @@
 \begin{document}
 
 \begin{theorem}[Negative answer to Thorisson Problem~3.1]
-Let $Z=(Z_k)_{k\in\mathbb Z}$ be an \emph{arbitrary} stationary $\{0,1\}$‑valued process.
+Let $Y=(Y_k)_{k\in\mathbb Z}$ be an \emph{arbitrary} stationary $\{0,1\}$‑valued process.
 Let $(p_k)_{k\ge0}\subset(0,1)$ satisfy
 \begin{subequations}\label{eq:pconds}
 \begin{align}
@@ -18,10 +18,9 @@ Let $(p_k)_{k\ge0}\subset(0,1)$ satisfy
   c  &:= \liminf_{n\to\infty}\sum_{k=n}^{2n}p_k \;>\;0. \label{eq:p2}
 \end{align}
 \end{subequations}
-Let $(J_k)_{k\in\mathbb Z}$ be independent $\mathrm{Bernoulli}(p_k)$ variables, independent of $Z$, and set
+Let $(J_k)_{k\in\mathbb Z}$ be independent $\mathrm{Bernoulli}(p_k)$ variables, independent of $Y$, and set
 \[
-  X_k := Z_k \oplus J_k,\qquad
-  Y_k := Z_k,\qquad k\in\mathbb Z,
+  X_k := Y_k \oplus J_k,\qquad
 \]
 where $\oplus$ denotes addition modulo~$2$ (the XOR–operator on $\{0,1\}$).
 Denote by $\theta_n$ the time–shift: $(\theta_n\bm x)_t := x_{t+n}$.
@@ -44,47 +43,54 @@ Then
 Hence setwise convergence of the shifted laws does not imply convergence in total variation.
 \end{theorem}
 
-\begin{proof}
-\textit{Step 1 (stationarity).}
-Since $(Z_k)_{k\in\mathbb Z}$ is stationary by assumption and independent of $(J_k)_{k\in\mathbb Z}$, the joint distribution of $(X,Y)$ is shift‑invariant (stationary).
-
-\smallskip
-\textit{Step 2 (setwise convergence).}
-Fix a cylinder $A$ depending on coordinates $t_1<\dots<t_m$.
-Because $X_k\neq Y_k$ iff $J_k=1$,
+\begin{proof} \\
+\textit{Step 1 (setwise convergence).}
+Fix a cylinder \(A\) that depends on the coordinates \(t_{1}<\dots<t_{m}\).
+Because \(X_{k}\neq Y_{k}\) exactly when \(J_{k}=1\),
 \[
-  \bigl|P(\theta_n X\in A)-P(Y\in A)\bigr|
-  \le P\!\bigl(\exists i\le m: J_{n+t_i}=1\bigr)
-  \le \sum_{i=1}^{m} p_{n+t_i}.
+  \bigl|P(\theta_{n}X\in A)-P(Y\in A)\bigr|
+     \le\sum_{i=1}^{m}p_{\,n+t_{i}}
+     \xrightarrow{n\to\infty}0\qquad(\text{by }\eqref{eq:p1}).
 \]
-By~\eqref{eq:p1} this sum tends to~$0$.
-Let $\mathcal C$ be the $\pi$–system of cylinder sets and
-$\mathcal D=\{A: P(\theta_n X\in A)\to P(Y\in A)\}$.
-Then $\mathcal C\subset\mathcal D$ and $\mathcal D$ is a Dynkin system;
- the $\pi$–$\lambda$ lemma yields $\sigma(\mathcal C)=\mathcal E^\infty\subset\mathcal D$,
-proving (a).
-
-\smallskip
-\textit{Step 3 (failure of total variation).}
-Define the cylinder
+Let \(\mathcal C\) denote the \emph{finite cylinder sets}; this family is a
+$\pi$-system since it is closed under finite intersections.
+Set
 \[
-  B_n := \bigl\{\bm x\in\{0,1\}^{\mathbb Z}\;:\;
-           \exists k\in[0,n]\text{ with }x_k\neq Z_k \bigr\}.
+  \mathcal D:=\bigl\{A\subset\{0,1\}^{\mathbb Z} :
+	P(\theta_{n}X\in A) \xrightarrow{n\to\infty}P(Y\in A)\bigr\}.
 \]
-We have $P(Y\in B_n)=0$.  For $\theta_n X$,
+\(\mathcal D\) fulfills the properties of a Dynkin system, and is then one.
+The estimate above shows \(\mathcal C\subset\mathcal D\).
+Hence the $\pi - \lambda$ lemma gives
 \[
-  P(\theta_n X\in B_n)
-     = 1-\prod_{k=n}^{2n}(1-p_k)
-     \ge 1-\exp\!\Bigl(-\sum_{k=n}^{2n} p_k\Bigr),
+  \sigma(\mathcal C)=\mathcal E^{\infty}\subset\mathcal D,
 \]
-using $(1-z)\le e^{-z}$.
-By~\eqref{eq:p2}, $\liminf_{n\to\infty}P(\theta_n X\in B_n)\ge 1-e^{-c}$.
-Thus
+so \(P(\theta_{n}X\in A)\to P(Y\in A)\) for every
+\(A\in\mathcal E^{\infty}\); that is, setwise convergence holds. 
+\newline
+\textit{Step 2 (failure of total variation).}
+For fixed \(n\in\mathbb N\) condition on the entire path \(Y=y\) and put  
 \[
-  \liminf_{n\to\infty}\bigl\|P(\theta_n X)-P(Y)\bigr\|_{\mathrm{TV}}
-  \;\ge\;1-e^{-c}\;>\;0,
+  \mu_y:=\mathcal L(\theta_n X\mid Y=y),\qquad
+  \nu_y:=\delta_y .
 \]
-establishing~(b).
+Only the coordinates \(n,\dots,2n\) can differ, so
+\[
+  \|\mu_y-\nu_y\|_{\mathrm{TV}}
+      \;=\;
+      P\!\bigl((J_n,\dots,J_{2n})\neq(0,\dots,0)\bigr)
+      \;=\;
+      1-\prod_{k=n}^{2n}(1-p_k)
+      \;\ge\;
+      1-\exp\!\Bigl(-\sum_{k=n}^{2n}p_k\Bigr).
+\]
+Using \eqref{eq:p2} and taking \(\liminf_{n\to\infty}\) we obtain
+\[
+  \liminf_{n\to\infty}
+  \bigl\|P(\theta_n X)-P(Y)\bigr\|_{\mathrm{TV}}
+     \;\ge\;1-e^{-c}\;>\;0,
+\]
+which proves~(b).
 \end{proof}
 
 \end{document}
