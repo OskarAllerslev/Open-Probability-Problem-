@@ -260,7 +260,44 @@ Define the push forward / law of $\xi$ as $\mu_\xi = P \circ \xi^{-1}$ or rather
 \end{align}
 \end{proof}
 
+\newpage
+\section*{Optimal times and martingales}
+\subsection*{Problem 17}
+Let $\xi_n \rightarrow \xi$ in $L^1$ and let $\mathcal{F}_n$ be an increasing filtration.\\ 
+\\
+Show: 
+\begin{align*}
+	E(\xi_n \mid \mathcal{F}_n) \overset{L^1}{\rightarrow} E(\xi \mid \mathcal{F}_\infty)
+\end{align*}
+\begin{proof}
+	\\ \\
+	\begin{align*}
+		|| E(\xi_n \mid \mathcal{F}_n) - E(\xi \mid \mathcal{F}_\infty) || &\leq || E(\xi_n \mid \mathcal{F}_n) - E(\xi \mid \mathcal{F}_n)|| + || E(\xi \mid \mathcal{F}_n)- E(\xi \mid \mathcal{F}_\infty) || \\ 
+		&= \underbrace{|| E(\xi_n - \xi \mid \mathcal{F}_n) ||}_{\xi_n \overset{L^1}{\rightarrow} \xi \Rightarrow =0 } + || E(\xi \mid \mathcal{F}_n ) - E(\xi \mid \mathcal{F}_\infty)||\\
+		&\overset{th 9.24}{=}  0
+	\end{align*}
+Where we have used conditioning limits, Jessen, Levy, since we have a filtration on an unboubounded index set, and an $\xi\in L^1$.
+\end{proof}
 
+\subsection*{Problem 21}
+Let $\tau > 0$ and let the filtration $\mathcal{F}=(\mathcal{F}_t)$ be right cont. \\ \\
+Show that $X_t = P(\tau < t \mid \mathcal{F}_t)$ has a right cont. version $(X_t = X_{t+}) \hspace{0.5cm} \forall t \geq 0$
+\begin{proof}\\ \\
+	\begin{align*}
+		E(X_t \mid \mathcal{F}_s) &= E(P(\tau < t \mid \mathcal{F}_t ) \mid \mathcal{F}_s) \\
+		&=P(\tau < t \mid \mathcal{F}_s) \\
+		&=P(\tau < t \mid ) \\
+		&\geq X_s
+	\end{align*}
+	Hence $X_t$ is a sub-martingale. We also note that $EX$ is right cont. since 
+	\begin{align*}
+		E(X_t) &= E(P(\tau < t \mid \mathcal{F}_t)) \\
+		&= P(\tau < t) 
+	\end{align*}
+
+	Then we apply theorem 9.28 (regularization, Doob) (ii) which states that for any $\mathcal{F}$ sub-martingale X on $\mathbb{R}_+$ with restriction $Y$ to $\mathbb{Q}_+$ we have 
+	that when $\mathcal{F}$ is right cont., $X$ has a right cont. version with left hand limits iff $EX$ is right cont. 
+\end{proof}
 
 
 \end{document}
