@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.22)  4 JUN 2025 19:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.22)  5 JUN 2025 17:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -293,12 +293,39 @@ LaTeX Font Info:    ... okay on input line 14.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18 	\\ \\
+           
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19 D
+      a $\xi < \frac{1}{3} \Rightarrow E(Z^3)< \infty$ for $Z \sim \text{GPD}$.
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 19.
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
 
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -311,6 +338,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [3]
 
+[4]
+
 ! LaTeX Error: Unicode character π (U+03C0)
                not set up for use with LaTeX.
 
@@ -318,7 +347,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.187 By the π
+l.218 By the π
                –λ (Dynkin–Sierpiński) theorem,
 You may provide a definition with
 \DeclareUnicodeCharacter 
@@ -331,7 +360,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.187 By the π–λ
+l.218 By the π–λ
                      (Dynkin–Sierpiński) theorem,
 You may provide a definition with
 \DeclareUnicodeCharacter 
@@ -344,13 +373,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.199 and the cylinders generate the product σ
+l.230 and the cylinders generate the product σ
                                                ‑algebra.
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 207--214
+Underfull \hbox (badness 10000) in paragraph at lines 238--245
 
  []
 
@@ -361,14 +390,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.214 \newline
+l.245 \newline
               
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--236
+Underfull \hbox (badness 10000) in paragraph at lines 262--267
 
  []
 
@@ -379,18 +408,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.236 \newline
+l.267 \newline
               
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-
-[4]
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 266--269
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 297--300
 
  []
 
@@ -401,7 +430,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.273 	\\ \\
+l.304 	\\ \\
             
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -414,14 +443,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.274 	\begin
+l.305 	\begin
              {align*}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 283--285
+Underfull \hbox (badness 10000) in paragraph at lines 314--316
 
  []
 
@@ -432,7 +461,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.285 \begin{proof}\\ \\
+l.316 \begin{proof}\\ \\
                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -445,7 +474,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.286 	\begin
+l.317 	\begin
              {align*}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -453,20 +482,20 @@ or  <return>  to continue without it.
 
 
 
-[6] (foundation_of_modern.aux)
+[7] (foundation_of_modern.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 2868 strings out of 473522
- 42273 string characters out of 5724676
+ 2869 strings out of 473522
+ 42281 string characters out of 5724676
  449892 words of memory out of 5000000
- 26093 multiletter control sequences out of 15000+600000
+ 26094 multiletter control sequences out of 15000+600000
  567811 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,15n,65p,259b,209s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,15n,65p,259b,210s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Progra
 m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/typ
@@ -479,9 +508,9 @@ e1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cms
 y8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/P
 rogram Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on foundation_of_modern.pdf (6 pages, 198514 bytes).
+Output written on foundation_of_modern.pdf (7 pages, 202952 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
+ 96 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
